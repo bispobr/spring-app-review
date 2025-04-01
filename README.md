@@ -1,18 +1,13 @@
 # app-revisão
 Este repositório contém um projeto simples construído usando Java Spring. O objetivo deste repositório é realizar uma pequena revisão acerca dos fundamentos iniciais de uma aplicação Java Spring.
 
-## Indice
-
-- [Instalação](Instalação)
-- [configuração](#configuração)
-- [API Endpoints](#api-endpoints)
 
 ## Instalação
 
 1. Clone o repositório:
 
 ```bash
-git https://github.com/bispobr/Spring-boot-todolist.git
+git https://github.com/bispobr/spring-app-review.git
 ```
 
 2. Instale as dependências com Maven
@@ -20,17 +15,23 @@ git https://github.com/bispobr/Spring-boot-todolist.git
 ## Como usar
 
 1. Inicie a aplicação com o Maven
-2. A API está acessivem atraves do Link http://localhost:8080
+2. API está acessivem atraves do Link http://localhost:8080
 
 
 ## API Endpoints
 
-A API contem os seguintes endpoints :
+API contem os seguintes endpoints:
 
-```markdown
+```http request
 GET / - Retorna o nome do usuario.
-
+```
+```http request
 POST / - Registra um novo usuario.
+Content-Type: application/json
 
+{
+ 	"nome": "xxxxx",
+	"email" : "xxxxx@xxxxx.xxx.xx"
+}
 ```
 
