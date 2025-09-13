@@ -1,7 +1,13 @@
 # App-revisão
-Este repositório apresenta um projeto simples desenvolvido com Java Spring. Seu objetivo é revisar os fundamentos básicos de uma aplicação Java Spring e testar o uso de alguns recursos do Spring Boot.
+Este repositório apresenta um projeto simples desenvolvido com Java Spring. O seu objetivo é revisar  alguns conceitos de uma aplicação Java utilizando Spring boot e testar o uso de alguns recursos.
 
-## Instalação
+
+## Requisitos
+
+- Java 21+
+- Maven
+
+## Executando o Projeto
 
 1. Clone o repositório:
 
@@ -9,7 +15,6 @@ Este repositório apresenta um projeto simples desenvolvido com Java Spring. Seu
 git https://github.com/bispobr/spring-app-review.git
 ```
 
-2. Instale as dependências com Maven
 
 ## Como usar
 
@@ -17,16 +22,36 @@ git https://github.com/bispobr/spring-app-review.git
 2. API pode ser consumida através do endereço http://localhost:8080
 3. A documentação da API está acessível através do Link http://localhost:8080/swagger-ui/index.html#/
 
+## Como Rodar em um Container (Opcional)
+
+1. Construa o projeto
+
+```bash
+mvn clean package 
+```
+
+2. Gere a Imagem Docker, com o Docker  instalado execute:
+
+
+```bash
+docker build -t revisao . 
+```
+
+3. Execute o Container
+
+```bash
+docker run -p 8080:8080 revisao
+```
 
 ## API Endpoints
 
 API contem os seguintes endpoints:
 
 ```http request
-GET / - Retorna o nome do usuario.
+GET /hello-word - Retorna o nome do usuario.
 ```
 ```http request
-POST / - Registra um novo usuario.
+POST /hello-word - Registra um novo usuario.
 Content-Type: application/json
 
 {
