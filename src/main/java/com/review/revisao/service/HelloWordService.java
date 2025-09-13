@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelloWordService {
     public String HelloWord(String nome){
-        log.info("nome retornado com sucesso");
+        if(nome != null){log.info("nome retornado com sucesso");}
         return "Hello! " + nome;
+
     }
 }
