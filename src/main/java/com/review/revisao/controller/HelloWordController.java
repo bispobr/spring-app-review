@@ -1,7 +1,6 @@
 package com.review.revisao.controller;
 
-import com.review.revisao.domain.User;
-import com.review.revisao.dto.UserDto;
+import com.review.revisao.dto.UserRequestDto;
 import com.review.revisao.service.HelloWordService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -33,8 +32,8 @@ public class HelloWordController {
     @ApiResponse (responseCode = "200", description = "Solicitação Retornado com Sucesso")
     @ApiResponse(responseCode = "400",description = "Erro de requisição")
     @ApiResponse(responseCode = "500",description = "Erro Interno")
-    public String helloWordPost(@Valid @RequestBody UserDto body){
+    public String helloWordPost(@Valid @RequestBody UserRequestDto body){
         log.info("solicitação helloWordPost recebida nome: " + body.nome());
-        return "Hello Word " + body.nome();
+        return helloWordService.HelloWord(body.nome());
     }
 }
